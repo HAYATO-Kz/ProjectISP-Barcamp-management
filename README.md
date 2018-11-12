@@ -1,5 +1,7 @@
 # Barcamp-Management
 
+[![Build Status](https://travis-ci.org/JP-SKE15/ProjectISP-Barcamp-management.svg?branch=master)](https://travis-ci.org/JP-SKE15/ProjectISP-Barcamp-management)
+
 Barcamp management is a web application for manage Barcamp event. Make managing event conveniently than manual is the main focus for this application
 
 This software is developed as a part of 01219245	Individual Software Development Process at Kasetsart University
