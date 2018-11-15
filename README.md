@@ -8,9 +8,9 @@ This software is developed as a part of 01219245	Individual Software Development
 
 # Requirements
 
-* Python: [download](https://www.python.org/downloads/)
-* NodeJS: [download](https://nodejs.org/en/)
-* Django: `pip install django` or [click](https://www.djangoproject.com/download/)
+* Python: [download](https://www.python.org/downloads/) (Version requirement: Python-3.7.0 and up)
+* NodeJS: [download](https://nodejs.org/en/) (Version requirement: Nodejs-10.12.0)
+* Django: `pip install django` or [click](https://www.djangoproject.com/download/) (Version requirement:Django-2.1.2)
 * Rest Framework: `pip install djangorestframework` or [click](https://www.django-rest-framework.org/)
 
 # Installation
@@ -34,7 +34,7 @@ This software is developed as a part of 01219245	Individual Software Development
 
 # Process component
 
-- [Iteration plan](https://github.com/JP-SKE15/ProjectISP-Barcamp-management/wiki/Iteration-plam)
+- [Iteration plan](https://github.com/JP-SKE15/ProjectISP-Barcamp-management/wiki/Iteration-plan)
 - [Issue tracker](https://github.com/JP-SKE15/ProjectISP-Barcamp-management/issues)
 - Task board : [[![Waffle.io - Columns and their card count](https://badge.waffle.io/JP-SKE15/ProjectISP-Barcamp-management.svg?columns=all)](https://waffle.io/JP-SKE15/ProjectISP-Barcamp-management))
 - [Web design](https://github.com/JP-SKE15/ProjectISP-Barcamp-management/blob/master/IterationPlan-and-Design/design.md)
