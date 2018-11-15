@@ -2,14 +2,14 @@
 
 [![Build Status](https://travis-ci.org/JP-SKE15/ProjectISP-Barcamp-management.svg?branch=master)](https://travis-ci.org/JP-SKE15/ProjectISP-Barcamp-management)
 
-Barcamp management is a web application for manage Barcamp event. Make managing event conveniently than manual is the main focus for this application
+Barcamp management is a web application for managing Barcamp event, which makes managing event more convenient than manually doing it yourselfs is the main focus for this application.
 
 This software is developed as a part of 01219245	Individual Software Development Process at Kasetsart University
 
 # Requirements
 
 * Python: [download](https://www.python.org/downloads/)
-* NodeJS: [dowload](https://nodejs.org/en/)
+* NodeJS: [download](https://nodejs.org/en/)
 * Django: `pip install django` or [click](https://www.djangoproject.com/download/)
 * Rest Framework: `pip install djangorestframework` or [click](https://www.django-rest-framework.org/)
 
@@ -23,7 +23,7 @@ This software is developed as a part of 01219245	Individual Software Development
 * Head over http://localhost:3000/
 
 
-# Member
+# Team member
 
 | Name        | ID           | Github  | Role |
 | ------------- |:-------------:|:-----:| -----: |
@@ -34,7 +34,7 @@ This software is developed as a part of 01219245	Individual Software Development
 
 # Process component
 
-- [Itetarion plan](https://github.com/JP-SKE15/ProjectISP-Barcamp-management/wiki/Iteration-plam)
+- [Iteration plan](https://github.com/JP-SKE15/ProjectISP-Barcamp-management/wiki/Iteration-plam)
 - [Issue tracker](https://github.com/JP-SKE15/ProjectISP-Barcamp-management/issues)
 - Task board : [[![Waffle.io - Columns and their card count](https://badge.waffle.io/JP-SKE15/ProjectISP-Barcamp-management.svg?columns=all)](https://waffle.io/JP-SKE15/ProjectISP-Barcamp-management))
 - [Web design](https://github.com/JP-SKE15/ProjectISP-Barcamp-management/blob/master/IterationPlan-and-Design/design.md)
