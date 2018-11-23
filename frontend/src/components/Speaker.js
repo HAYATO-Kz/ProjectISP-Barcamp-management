@@ -156,7 +156,7 @@ class Speaker extends Component {
                        'end_time':etime, 'speaker':speak, 'room':r, 'vote':v }
     $.ajax({
       dataType: 'json',
-      url: 'http://localhost:3000/api/topic/',
+      url: 'https://barcamp-management.herokuapp.com/api/topic/',
       type: 'POST',
       data: JSON.stringify(sendData),
       contentType:'application/json',
@@ -179,7 +179,7 @@ class Speaker extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/api/topic/")
+    fetch("https://barcamp-management.herokuapp.com/api/topic/")
       .then(response => {
         if (response.status !== 200) {
           return console.log('error')
