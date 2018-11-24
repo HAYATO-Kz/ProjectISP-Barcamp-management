@@ -8,7 +8,7 @@ This software is developed as a part of 01219245	Individual Software Development
 
 # Website
 
-Link to webpage barcamp-management.herokuapp.com
+Link to webpage https://barcamp-management.herokuapp.com/
 
 # Requirements
 
