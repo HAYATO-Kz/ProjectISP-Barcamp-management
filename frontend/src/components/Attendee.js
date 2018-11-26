@@ -113,7 +113,7 @@ class Attendee extends Component {
   }
 
   componentDidMount() {
-    fetch("https://barcamp-management.herokuapp.com/api/topic/")
+    fetch("http://barcamp-management.herokuapp.com/api/topic/")
     // fetch("https://localhost:3000/api/topic/")
       .then(response => {
         if (response.status !== 200) {
@@ -122,7 +122,7 @@ class Attendee extends Component {
         return response.json();
       })
       .then(data => this.setState({ allTopic: data }));
-    fetch("https://barcamp-management.herokuapp.com/api/user/")
+    fetch("http://barcamp-management.herokuapp.com/api/user/")
     // fetch("https://localhost:3000/api/user/")
       .then(response => {
         if (response.status !== 200) {
@@ -188,7 +188,7 @@ class Attendee extends Component {
                       'speaker': sp, 'room': r, 'vote': v }
       $.ajax({
         dataType: 'json',
-        url: `https://barcamp-management.herokuapp.com/api/topic/${idtop}/`,
+        url: `http://barcamp-management.herokuapp.com/api/topic/${idtop}/`,
         // url: `https://localhost:3000/api/topic/${idtop}/`,
         type: 'PUT',
         data: JSON.stringify(sendData),
@@ -201,7 +201,7 @@ class Attendee extends Component {
       const sendData2 = { 'name':user, 'topic_voted':tvote}
       $.ajax({
         dataType: 'json',
-        url: `https://barcamp-management.herokuapp.com/api/user/${this.state.userID}/`,
+        url: `http://barcamp-management.herokuapp.com/api/user/${this.state.userID}/`,
         // url: `https://localhost:3000/api/user/${this.state.userID}/`,
         type: 'PUT',
         data: JSON.stringify(sendData2),
