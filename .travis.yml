@@ -16,3 +16,4 @@ script:
   - python manage.py makemigrations
   - python manage.py migrate
   - python manage.py test backend
+  - python3 manage.py test frontend/tests
