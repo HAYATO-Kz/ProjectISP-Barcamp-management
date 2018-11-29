@@ -11,6 +11,12 @@ from selenium.webdriver.support.ui import Select
 
 topic = "pppp"
 speaker = "llll"
+localS = "localhost:3000/speaker"
+localA = "localhost:3000/attendee"
+deployS = "https://barcamp-management.herokuapp.com/speaker"
+deployA = "https://barcamp-management.herokuapp.com/attendee"
+useS = deployS
+useA = deployA
 
 class UntitledTestCase(unittest.TestCase):
     def setUp(self):
@@ -19,8 +25,7 @@ class UntitledTestCase(unittest.TestCase):
 
     def test_add_new_topic(self):
         driver = self.driver
-        # driver.get("localhost:3000/speaker")
-        driver.get("https://barcamp-management.herokuapp.com/speaker")
+        driver.get(useS)
         driver.find_element_by_id("Popover1").click()
         driver.find_element_by_id("itopic").click()
         driver.find_element_by_id("itopic").clear()
@@ -37,8 +42,7 @@ class UntitledTestCase(unittest.TestCase):
 
     def test_change_to_attendee_page(self):
         driver = self.driver
-        # driver.get("localhost:3000/speaker")
-        driver.get("https://barcamp-management.herokuapp.com/speaker")
+        driver.get(useS)
         driver.find_element_by_id("username").click()
         driver.find_element_by_id("attendee").click()
         text=driver.find_element_by_id("header").text
@@ -47,8 +51,7 @@ class UntitledTestCase(unittest.TestCase):
 
     def test_vote_topic(self):
         driver = self.driver
-        # driver.get("localhost:3000/attendee")
-        driver.get("https://barcamp-management.herokuapp.com/attendee")
+        driver.get(useA)
         driver.find_element_by_id(topic).click()
         driver.find_element_by_id(speaker).click()
         alert = driver.switch_to.alert
@@ -67,8 +70,7 @@ class UntitledTestCase(unittest.TestCase):
 
     def test_change_to_speaker_page(self):
         driver = self.driver
-        # self.driver.get("localhost:3000/attendee")
-        driver.get("https://barcamp-management.herokuapp.com/attendee")
+        driver.get(useA)
         driver.find_element_by_id("username").click()
         driver.find_element_by_id("speaker").click()
         text=driver.find_element_by_id("header").text
@@ -77,15 +79,13 @@ class UntitledTestCase(unittest.TestCase):
 
     def test_logout(self):
         driver = self.driver
-        # self.driver.get("localhost:3000/attendee")
-        driver.get("https://barcamp-management.herokuapp.com/attendee")
+        self.driver.get(useA)
         driver.find_element_by_id("username").click()
         driver.find_element_by_id("out").click()
         text = driver.find_element_by_id("bar").text
         self.assertEquals("BARCAMP",text)
 
-        # self.driver.get("localhost:3000/speaker")
-        driver.get("https://barcamp-management.herokuapp.com/speaker")
+        self.driver.get(useS)
         driver.find_element_by_id("username").click()
         driver.find_element_by_id("out").click()
         text = driver.find_element_by_id("bar").text
