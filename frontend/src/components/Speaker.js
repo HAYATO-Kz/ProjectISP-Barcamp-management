@@ -74,8 +74,8 @@ class Speaker extends Component {
       name : "Speaker",
       username : "user",
       topic : "No topic",
-      stopTime: '6:50 pm',
-      startTime: '6:50 am',
+      stopTime: '6:50',
+      startTime: '6:50',
       description : "No des.",
       room : 0 ,
       vote : 0 ,
@@ -106,7 +106,7 @@ class Speaker extends Component {
   }
 
   handleStartTimeChange(newTime){
-    this.setState({ startTime: newTime.formatted})
+    this.setState({ startTime: newTime.formatted24})
   }
 
   toggleStartTimekeeper(val){
@@ -114,7 +114,7 @@ class Speaker extends Component {
   }
 
   handleStopTimeChange(newTime){
-    this.setState({ stopTime: newTime.formatted})
+    this.setState({ stopTime: newTime.formatted24})
   }
 
   toggleStopTimekeeper(val){
@@ -152,6 +152,24 @@ class Speaker extends Component {
     var speak = this.state.name
     var r = this.state.room
     var v = this.state.vote
+
+    var st = stime.split(':')
+    var et = etime.split(':')
+    var hrS = parseInt(st[0])
+    var mnS = parseInt(st[1])
+    var hrE = parseInt(et[0])
+    var mnE = parseInt(et[1])
+    if(hrS>hrE){
+      alert("End time should not be before start time.")
+      return
+    }
+    if(hrS===hrE){
+      if(mnS>mnE){
+        alert("End time should not be before start time.")
+        return
+      }
+    }
+
     const sendData = { 'topic_name' : to, 'description':des, 'start_time':stime,
                        'end_time':etime, 'speaker':speak, 'room':r, 'vote':v }
     $.ajax({
