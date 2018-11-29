@@ -17,7 +17,7 @@ Link to webpage https://barcamp-management.herokuapp.com/
 * Django: `pip install django` or [click](https://www.djangoproject.com/download/) (Version requirement:Django-2.1.2)
 * Rest Framework: `pip install djangorestframework` or [click](https://www.django-rest-framework.org/)
 
-# Installation
+# How to run
 
 1. Clone this github repo
 2. Go to the repo then install node_modules `npm install`
