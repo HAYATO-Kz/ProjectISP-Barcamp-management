@@ -206,16 +206,16 @@ class Speaker extends Component {
       <div>
         <div>
           <Navbar color="light" light expand="md" style={HeaderTap} >
-            <NavbarBrand>SPEAKER</NavbarBrand>
+            <NavbarBrand id ="header">SPEAKER</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret>
+                  <DropdownToggle id='username' nav caret>
                   {this.state.username}
                   </DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem onClick={() => this.props.history.push('/attendee')}>Attendee</DropdownItem>
+                    <DropdownItem id="attendee" onClick={() => this.props.history.push('/attendee')}>Attendee</DropdownItem>
                     <DropdownItem onClick={this.modalRoomToggle}>Room</DropdownItem>
                       <Modal isOpen={this.state.modalRoom} toggle={this.modalRoomToggle} >
                         <ModalHeader toggle={this.modalRoomToggle} charCode= "x">Room</ModalHeader>
@@ -224,7 +224,7 @@ class Speaker extends Component {
                         </ModalBody>                  
                       </Modal>
                     <DropdownItem divider />
-                    <DropdownItem style={{color: 'red'}} onClick={this.logout}>Sign out</DropdownItem>
+                    <DropdownItem id="out" style={{color: 'red'}} onClick={this.logout}>Sign out</DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </Nav>
@@ -242,15 +242,15 @@ class Speaker extends Component {
               <PopoverBody style={popoverBody}>
                 <InputGroup >
                   <InputGroupAddon addonType="prepend">Topic</InputGroupAddon>
-                  <Input placeholder="topic" onChange = {this.handleTopicChange} />
+                  <Input id="itopic" placeholder="topic" onChange = {this.handleTopicChange} />
                 </InputGroup>
                 <br/>
                 <InputGroup >
                   <InputGroupAddon addonType="prepend">Speaker</InputGroupAddon>
-                  <Input placeholder="name" onChange = {this.handleSpeakerChange} />
+                  <Input id = 'ispeaker'placeholder="name" onChange = {this.handleSpeakerChange} />
                 </InputGroup>
                 <br/>
-                <Input type="textarea" name="text" id="exampleText" placeholder="Description..." onChange = {this.handleDesChange}/>
+                <Input id='ides' type="textarea" name="text" id="exampleText" placeholder="Description..." onChange = {this.handleDesChange}/>
                 <br/>
                 <ButtonGroup>
                   <Button style={StartTimeButton} onClick={()=>this.toggleStartTimekeeper(true)}>start : {this.state.startTime}</Button>
@@ -286,16 +286,16 @@ class Speaker extends Component {
                   false
                   }
                 </div>
-              <Button  onClick ={this.addNewTopic} block>ADD</Button>
+              <Button id="add" onClick ={this.addNewTopic} block>ADD</Button>
             </PopoverBody>
           </Popover>
         </div>
-        <Container style = {mid}>
+        <Container id="topic_all" style = {mid}>
           {this.state.allTopic.map((topic, index) => (
             <div>
-              <Button style = {topicButton} outline color="danger" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
+              <Button  id={topic.topic_name} style = {topicButton} outline color="danger" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
               <Modal isOpen={this.state.modal[index+1]} toggle={() =>this.modalToggle(index+1)} >
-                <ModalHeader toggle={() =>this.modalToggle(index+1)} charCode= "x">{topic.topic_name}</ModalHeader>
+                <ModalHeader id={topic.topic_name} toggle={() =>this.modalToggle(index+1)} charCode= "x">{topic.topic_name}</ModalHeader>
                 <ModalBody>
                   {topic.description}
                   <br/>
