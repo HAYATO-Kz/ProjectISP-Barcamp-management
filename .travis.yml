@@ -16,6 +16,8 @@ script:
   - python manage.py makemigrations
   - python manage.py migrate
   - python manage.py test backend --verbosity 2
+  - coverage run --source='.' manage.py test backend
+  - coverage report
   - python3 manage.py test frontend/tests --verbosity 2
-  - coverage run --source='.' manage.py test myapp
+  - coverage run --source='.' manage.py test frontend/tests
   - coverage report
