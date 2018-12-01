@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import logging.config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -125,3 +126,44 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+LOGGING_CONFIG = None
+
+logging.config.dictConfig({
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'default': {
+            'format': '%(asctime)s %(levelname)s %(message)s',
+            'datefmt': '%Y-%m-%d %I:%M:%S',
+        },
+    },
+    'handlers': {
+        'log-info': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/activity.log',
+            'formatter': 'default',
+        },
+        'log-error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/error.log',
+            'formatter': 'default',
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['log-error'],
+            'level': 'ERROR',
+        },
+        'frontend.views': {
+            'handlers': ['log-info'],
+            'level': 'INFO',
+        },
+        'backend.views': {
+            'handlers': ['log-info'],
+            'level': 'INFO',
+        },
+    }
+})
