@@ -1,16 +1,27 @@
 language: python
 
+sudo: required
+
+dist: trusty
+
 python: 
   - "3.6"
 
 git:
   depth: 1
 
+before_install:
+ - sudo apt-get update
+ - sudo apt-get install chromium-chromedriver
+
 install:
   - pip install -r requirements.txt
 
 env: 
   - TRAVIS_SECURE_ENV_VARS=true
+
+before_script:
+  - "export PATH=$PATH:/usr/lib/chromium-browser/"
 
 script:
   - python manage.py makemigrations
