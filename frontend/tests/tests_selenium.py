@@ -8,6 +8,7 @@ from selenium.common.exceptions import (NoAlertPresentException,
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.options import Options
 
 topic = "pppp"
 speaker = "llll"
@@ -20,7 +21,10 @@ useA = deployA
 
 class UntitledTestCase(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome('chromedriver')
+        options = Options()
+        options.add_argument("--headless")
+        self.driver = webdriver.Chrome(chrome_options=options)
+        # self.driver = webdriver.Chrome('chromedriver')
         self.driver.implicitly_wait(30)
 
     def test_add_new_topic(self):
