@@ -221,16 +221,16 @@ class Attendee extends Component {
 
         <div>
           <Navbar color="light" light expand="md" style={HeaderTap} >
-            <NavbarBrand >ATTENDEE</NavbarBrand>
+            <NavbarBrand id="header" >ATTENDEE</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
+                <DropdownToggle id='username' nav caret>
                 {this.state.username}
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem onClick={() => this.props.history.push('/speaker')}>Speaker</DropdownItem>
+                  <DropdownItem id="speaker" onClick={() => this.props.history.push('/speaker')}>Speaker</DropdownItem>
                   <DropdownItem onClick={this.modalRoomToggle}>Room</DropdownItem>
                     <Modal isOpen={this.state.modalRoom} toggle={this.modalRoomToggle} >
                       <ModalHeader toggle={this.modalRoomToggle} charCode= "x">Room</ModalHeader>
@@ -239,7 +239,7 @@ class Attendee extends Component {
                       </ModalBody>
                     </Modal>
                   <DropdownItem divider />
-                  <DropdownItem style={{color: 'red'}} onClick={this.logout}>Sign out</DropdownItem>
+                  <DropdownItem id ="out" style={{color: 'red'}} onClick={this.logout}>Sign out</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               </Nav>
@@ -254,7 +254,7 @@ class Attendee extends Component {
         <Container style = {mid}>
             {this.state.allTopic.map((topic, index) => (
               <div>
-                <Button style = {topicButton} outline color="danger" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
+                <Button id={topic.topic_name} style = {topicButton} outline color="danger" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
                 <Modal isOpen={this.state.modal[index+1]} toggle={() =>this.modalToggle(index+1)} >
                   <ModalHeader toggle={() =>this.modalToggle(index+1)} charCode= "x">{topic.topic_name} [vote : {topic.vote}]</ModalHeader>
                   <ModalBody>
@@ -265,7 +265,7 @@ class Attendee extends Component {
                   <ModalFooter>
                       by {topic.speaker}
                       <br/>
-                      <Button onClick={()=>this.update(topic,index)}>+</Button>
+                      <Button id={topic.speaker} onClick={()=>this.update(topic,index)}>+</Button>
                       </ModalFooter>
                 </Modal>
               </div>
