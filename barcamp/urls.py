@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 
+admin.site.site_header = "Barcamp Management"
+admin.site.site_title = "Barcamp"
+admin.site.index_title = "Organizer"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('backend.urls')),

@@ -113,6 +113,7 @@ class Attendee extends Component {
   }
 
   componentDidMount() {
+    // fetch("https://barcamp-management.herokuapp.com/api/topic/")
     fetch("http://localhost:3000/api/topic/")
       .then(response => {
         if (response.status !== 200) {
@@ -121,6 +122,7 @@ class Attendee extends Component {
         return response.json();
       })
       .then(data => this.setState({ allTopic: data }));
+    // fetch("https://barcamp-management.herokuapp.com/api/user/")
     fetch("http://localhost:3000/api/user/")
       .then(response => {
         if (response.status !== 200) {
@@ -142,6 +144,7 @@ class Attendee extends Component {
           const sendDataU = { 'name' : newUser, 'topic_voted' :vote}
           $.ajax({
           dataType: 'json',
+          // url: 'https://barcamp-management.herokuapp.com/api/user/',
           url: 'http://localhost:3000/api/user/',
           type: 'POST',
           data: JSON.stringify(sendDataU),
@@ -185,6 +188,7 @@ class Attendee extends Component {
                       'speaker': sp, 'room': r, 'vote': v }
       $.ajax({
         dataType: 'json',
+        // url: `https://barcamp-management.herokuapp.com/api/topic/${idtop}/`,
         url: `http://localhost:3000/api/topic/${idtop}/`,
         type: 'PUT',
         data: JSON.stringify(sendData),
@@ -197,6 +201,7 @@ class Attendee extends Component {
       const sendData2 = { 'name':user, 'topic_voted':tvote}
       $.ajax({
         dataType: 'json',
+        // url: `https://barcamp-management.herokuapp.com/api/user/${this.state.userID}/`,
         url: `http://localhost:3000/api/user/${this.state.userID}/`,
         type: 'PUT',
         data: JSON.stringify(sendData2),
@@ -207,7 +212,8 @@ class Attendee extends Component {
     }else{
       alert("You voted this topic.")
     }
-
+    this.state.modal[index+1] = !this.state.modal[index+1]
+    this.forceUpdate()
   }
 
   render() {
@@ -216,16 +222,16 @@ class Attendee extends Component {
 
         <div>
           <Navbar color="light" light expand="md" style={HeaderTap} >
-            <NavbarBrand >ATTENDEE</NavbarBrand>
+            <NavbarBrand id="header" >ATTENDEE</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
+                <DropdownToggle id='username' nav caret>
                 {this.state.username}
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem onClick={() => this.props.history.push('/speaker')}>Speaker</DropdownItem>
+                  <DropdownItem id="speaker" onClick={() => this.props.history.push('/speaker')}>Speaker</DropdownItem>
                   <DropdownItem onClick={this.modalRoomToggle}>Room</DropdownItem>
                     <Modal isOpen={this.state.modalRoom} toggle={this.modalRoomToggle} >
                       <ModalHeader toggle={this.modalRoomToggle} charCode= "x">Room</ModalHeader>
@@ -234,7 +240,7 @@ class Attendee extends Component {
                       </ModalBody>
                     </Modal>
                   <DropdownItem divider />
-                  <DropdownItem style={{color: 'red'}} onClick={this.logout}>Sign out</DropdownItem>
+                  <DropdownItem id ="out" style={{color: 'red'}} onClick={this.logout}>Sign out</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               </Nav>
@@ -249,7 +255,7 @@ class Attendee extends Component {
         <Container style = {mid}>
             {this.state.allTopic.map((topic, index) => (
               <div>
-                <Button style = {topicButton} outline color="danger" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
+                <Button id={topic.topic_name} style = {topicButton} outline color="danger" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
                 <Modal isOpen={this.state.modal[index+1]} toggle={() =>this.modalToggle(index+1)} >
                   <ModalHeader toggle={() =>this.modalToggle(index+1)} charCode= "x">{topic.topic_name}</ModalHeader>
                   <ModalBody>
@@ -260,7 +266,7 @@ class Attendee extends Component {
                   <ModalFooter>
                       by {topic.speaker}
                       <br/>
-                      <Button onClick={()=>this.update(topic,index)}>+</Button>
+                      <Button id={topic.speaker} onClick={()=>this.update(topic,index)}>+</Button>
                       </ModalFooter>
                 </Modal>
               </div>

@@ -20,7 +20,7 @@ class Home extends Component {
         return (
             <Container>
                 <Row>
-                    <Col style = {block}>
+                    <Col id ="bar" style = {block}>
                     BARCAMP
                     </Col>
                 </Row>    
