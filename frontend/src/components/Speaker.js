@@ -184,6 +184,10 @@ class Speaker extends Component {
         alert("'0 sec' Really!!!!")
         return
       }
+      else if (mnE-mnS < 15){
+        alert("You should more than 15 min.")
+        return
+      }
     }
 
     const sendData = { 'topic_name' : to, 'description':des, 'start_time':stime,
