@@ -209,10 +209,10 @@ class Attendee extends Component {
       })
 
       alert("You are vote success.")
+      window.location.reload();
     }else{
       alert("You voted this topic.")
     }
-
   }
 
   render() {
@@ -256,7 +256,7 @@ class Attendee extends Component {
               <div>
                 <Button style = {topicButton} outline color="danger" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
                 <Modal isOpen={this.state.modal[index+1]} toggle={() =>this.modalToggle(index+1)} >
-                  <ModalHeader toggle={() =>this.modalToggle(index+1)} charCode= "x">{topic.topic_name}</ModalHeader>
+                  <ModalHeader toggle={() =>this.modalToggle(index+1)} charCode= "x">{topic.topic_name} [vote : {topic.vote}]</ModalHeader>
                   <ModalBody>
                       {topic.description}
                       <br/>
