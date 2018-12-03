@@ -168,6 +168,10 @@ class Speaker extends Component {
         alert("End time should not be before start time.")
         return
       }
+      else if (mnS===mnE){
+        alert("'0 sec' Really!!!!")
+        return
+      }
     }
 
     const sendData = { 'topic_name' : to, 'description':des, 'start_time':stime,
