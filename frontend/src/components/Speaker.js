@@ -71,12 +71,12 @@ class Speaker extends Component {
     this.state = {
       modal: [] ,
       allTopic : [] ,
-      name : "Speaker",
+      name : "",
       username : "user",
-      topic : "No topic",
+      topic : "",
       stopTime: '6:50',
       startTime: '6:50',
-      description : "No des.",
+      description : "",
       room : 0 ,
       vote : 0 ,
       start: true,
@@ -152,7 +152,19 @@ class Speaker extends Component {
     var speak = this.state.name
     var r = this.state.room
     var v = this.state.vote
-
+    if(to === ""){
+        alert("Please fill topic's title")
+        return
+      }
+    if(des === ""){
+      alert("Please fill topic's description")
+      return
+    }
+    if(speak === ""){
+      alert("Please fill speaker's name")
+      return
+    }
+    
     var st = stime.split(':')
     var et = etime.split(':')
     var hrS = parseInt(st[0])
