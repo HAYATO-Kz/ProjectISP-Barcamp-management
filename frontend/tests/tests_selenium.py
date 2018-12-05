@@ -23,12 +23,7 @@ class UntitledTestCase(unittest.TestCase):
     def setUp(self):
         options = Options()
         options.add_argument("--headless")
-<<<<<<< HEAD
         self.driver = webdriver.Chrome(chrome_options=options)
-=======
-        # self.driver = webdriver.Chrome(chrome_options=options)
-        self.driver = webdriver.Chrome('chromedriver')
->>>>>>> master
         self.driver.implicitly_wait(30)
 
     def test_add_new_topic(self):
