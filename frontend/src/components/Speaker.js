@@ -75,8 +75,9 @@ class Speaker extends Component {
       username : "user",
       topic : "",
       stopTime: '6:50',
-      startTime: '7:20',
+      startTime: '6:20',
       description : "",
+      go : "Sign out",
       room : 0 ,
       vote : 0 ,
       start: true,
@@ -233,9 +234,11 @@ class Speaker extends Component {
         const name = JSON.stringify(user, null, 2);
         const nameE =  JSON.parse(name);
         this.setState({username:nameE.displayName})
+        this.setState({go:"Sign out"})
       } else {
         // Signed out
         this.setState({username:"no user"})
+        this.setState({go:"Sign in"})
       }
     }.bind(this))
   }
@@ -262,7 +265,7 @@ class Speaker extends Component {
                         </ModalBody>                  
                       </Modal>
                     <DropdownItem divider />
-                    <DropdownItem id="out" style={{color: 'red'}} onClick={this.logout}>Sign out</DropdownItem>
+                    <DropdownItem id="out" style={{color: 'red'}} onClick={this.logout}>{this.state.go}</DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </Nav>

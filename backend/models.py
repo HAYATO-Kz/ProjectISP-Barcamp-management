@@ -13,7 +13,7 @@ class Topics(models.Model):
         return self.topic_name + ' by ' + self.speaker
 
 class User(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100,unique=True)
     topic_voted = models.CharField(max_length=200)
 
     def __str__(self):

@@ -21,10 +21,10 @@ useA = deployA
 
 class UntitledTestCase(unittest.TestCase):
     def setUp(self):
-        options = Options()
-        options.add_argument("--headless")
-        self.driver = webdriver.Chrome(chrome_options=options)
-        # self.driver = webdriver.Chrome('chromedriver')
+        # options = Options()
+        # options.add_argument("--headless")
+        # self.driver = webdriver.Chrome(chrome_options=options)
+        self.driver = webdriver.Chrome('chromedriver')
         self.driver.implicitly_wait(30)
 
     def test_add_new_topic(self):
@@ -63,13 +63,6 @@ class UntitledTestCase(unittest.TestCase):
         alert.accept()
         self.assertEquals("You are vote success.",text)
 
-        script = "document.getElementById('" + topic + "').click();"
-        self.driver.execute_script(script)
-        driver.find_element_by_id(speaker).click()
-        alert = driver.switch_to.alert
-        text = alert.text  
-        alert.accept()
-        self.assertEquals("You voted this topic.",text)
         driver.close()
 
     def test_change_to_speaker_page(self):

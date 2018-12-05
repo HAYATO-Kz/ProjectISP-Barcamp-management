@@ -49,7 +49,7 @@ class Login extends Component{
 
     changePage(){
       setTimeout(() => {
-        this.props.history.push('/speaker');
+        this.props.history.push('/attendee');
       }, 2000);
     }
     
