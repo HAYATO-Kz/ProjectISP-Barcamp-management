@@ -142,7 +142,7 @@ logging.config.dictConfig({
     'disable_existing_loggers': False,
     'formatters': {
         'default': {
-            'format': '%(asctime)s %(levelname)s %(message)s',
+            'format': '%(asctime)s %(levelname)s %(funcName)s %(message)s',
             'datefmt': '%Y-%m-%d %I:%M:%S',
         },
     },
