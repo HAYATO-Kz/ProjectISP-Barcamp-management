@@ -16,8 +16,8 @@ localS = "localhost:3000/speaker"
 localA = "localhost:3000/attendee"
 deployS = "https://barcamp-management.herokuapp.com/speaker"
 deployA = "https://barcamp-management.herokuapp.com/attendee"
-useS = localS
-useA = localA
+useS = deployS
+useA = deployA
 
 class UntitledTestCase(unittest.TestCase):
     def setUp(self):
