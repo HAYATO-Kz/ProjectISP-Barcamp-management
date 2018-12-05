@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import {Container} from 'reactstrap';
 
 firebase.initializeApp({
   apiKey:"AIzaSyBNwp4IUDZODI87R9JS6I1qe1fQzBEHngw",
@@ -8,17 +9,26 @@ firebase.initializeApp({
 });
 
 const Lstyles = {
-  textAlign: 'center'
+  textAlign: 'center',
+  color : 'white'
 };
 
 const load = {
-  textAlign : 'right',
+  textAlign : 'center',
   padding : '50px',
   fontSize : "20px"
 };
 const welcome = {
   fontSize : '70px'
 };
+
+const page = {
+  backgroundColor : "#09090A"
+}
+
+const page2 = {
+  height : "980px",
+}
 
 class Login extends Component{
     constructor(props) {
@@ -62,7 +72,9 @@ class Login extends Component{
 
     render() {
       return (
-        <div style={Lstyles}>
+        <div style={page}>
+          <Container style={page2}>
+          <div style={Lstyles}>
           <font size="90">Barcamp Login</font>
           {this.state.isSignedIn ? (
             <span>
@@ -76,6 +88,8 @@ class Login extends Component{
               firebaseAuth={firebase.auth()}
             />
           )}
+          </div>
+          </Container>
         </div>
       )
     }

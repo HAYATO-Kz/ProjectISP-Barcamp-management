@@ -8,6 +8,7 @@ const block = {
    fontFamily: 'Permanent Marker', 
    fontFamily: 'cursive',
      fontSize: '100px',
+     color : 'white'
  }
  const room ={
    textAlign: 'center',
@@ -15,10 +16,20 @@ const block = {
    height : '100px' ,
    width : '200px' ,
  }
+
+ const page = {
+    height : "980px",
+ }
+
+ const page2 = {
+     backgroundColor : "#09090A"
+ }
+
 class Home extends Component {
     render(){
         return (
-            <Container>
+            <div style={page2}>
+                <Container style={page}>
                 <Row>
                     <Col id ="bar" style = {block}>
                     BARCAMP
@@ -30,6 +41,7 @@ class Home extends Component {
                     <Button outline color="primary" onClick={() => this.props.history.push('/login')} block>Sign in</Button>
                 </Row>
             </Container>
+            </div>
         );
     }
 }
