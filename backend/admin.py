@@ -37,4 +37,5 @@ class TopicAdmin(admin.ModelAdmin):
         return queryset
 
 
-admin.site.register(Topics,TopicAdmin,User)
+admin.site.register(Topics,TopicAdmin)
+admin.site.register(User)
