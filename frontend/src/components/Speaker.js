@@ -219,6 +219,7 @@ class Speaker extends Component {
   }
 
   componentDidMount() {
+    document.body.style.backgroundColor = "#1C1E1E"
     // fetch("https://barcamp-management.herokuapp.com/api/topic/")
     fetch("http://localhost:3000/api/topic/")
       .then(response => {
@@ -334,7 +335,7 @@ class Speaker extends Component {
         <Container id="topic_all" style = {mid}>
           {this.state.allTopic.map((topic, index) => (
             <div>
-              <Button  id={topic.topic_name} style = {topicButton} outline color="danger" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
+              <Button  id={topic.topic_name} style = {topicButton} outline color="warning" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
               <Modal isOpen={this.state.modal[index+1]} toggle={() =>this.modalToggle(index+1)} >
                 <ModalHeader id={topic.topic_name} toggle={() =>this.modalToggle(index+1)} charCode= "x">{topic.topic_name}</ModalHeader>
                 <ModalBody>

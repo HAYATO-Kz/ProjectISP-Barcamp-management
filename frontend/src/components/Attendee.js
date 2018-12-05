@@ -24,14 +24,13 @@ const mid = {
     textAlign : 'center'
   }
   
-  const topicButton = {
+const topicButton = {
     width : '750px',
     height : '50px',
     marginTop : '25px',
     marginRight : '40px',
     marginLeft : '40px'
-  }
-
+}
 
 class Attendee extends Component {
   constructor(props) {
@@ -114,6 +113,7 @@ class Attendee extends Component {
   }
 
   componentDidMount() {
+    document.body.style.backgroundColor = "#1C1E1E"
     // fetch("https://barcamp-management.herokuapp.com/api/topic/")
     fetch("http://localhost:3000/api/topic/")
       .then(response => {
@@ -256,7 +256,7 @@ class Attendee extends Component {
         <Container style = {mid}>
             {this.state.allTopic.map((topic, index) => (
               <div>
-                <Button id={topic.topic_name} style = {topicButton} outline color="danger" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
+                <Button id={topic.topic_name} style = {topicButton} outline color="warning" onClick={() =>this.modalToggle(index+1)}>{topic.topic_name}</Button>
                 <Modal isOpen={this.state.modal[index+1]} toggle={() =>this.modalToggle(index+1)} >
                   <ModalHeader toggle={() =>this.modalToggle(index+1)} charCode= "x">{topic.topic_name} [vote : {topic.vote}]</ModalHeader>
                   <ModalBody>
