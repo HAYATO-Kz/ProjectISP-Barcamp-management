@@ -1,6 +1,7 @@
 # Barcamp-Management
 
-[![Build Status](https://travis-ci.org/JP-SKE15/ProjectISP-Barcamp-management.svg?branch=master)](https://travis-ci.org/JP-SKE15/ProjectISP-Barcamp-management)
+Status of Travis and Coverage: [![Build Status](https://travis-ci.org/JP-SKE15/ProjectISP-Barcamp-management.svg?branch=master)](https://travis-ci.org/JP-SKE15/ProjectISP-Barcamp-management)
+
 
 Barcamp management is a web application for managing Barcamp event, which makes managing event more convenient than manually doing it yourselfs is the main focus for this application.
 
@@ -10,22 +11,29 @@ This software is developed as a part of 01219245	Individual Software Development
 
 Link to webpage https://barcamp-management.herokuapp.com/
 
-# Requirements
-
-* Python: [download](https://www.python.org/downloads/) (Version requirement: Python-3.7.0 and up)
-* NodeJS: [download](https://nodejs.org/en/) (Version requirement: Nodejs-10.12.0)
-* Django: `pip install django` or [click](https://www.djangoproject.com/download/) (Version requirement:Django-2.1.2)
-* Rest Framework: `pip install djangorestframework` or [click](https://www.django-rest-framework.org/)
+# Installation
+Install Python and NodeJS<br>
+* **Python** (version 3.6.6 or newer) <br>
+The official download site: [download](https://www.python.org/downloads/)
+    <br>
+* **NodeJS** (version 10.12.0)<br>
+The official download site: [download](https://nodejs.org/en/)
+<br>
 
 # How to run
-
-1. Clone this github repo
-2. Go to the repo then install node_modules `npm install`
-3. Create any necessary database tables according to the database settings `python manage.py migrate`
-4. Load initialize database `python manage.py loaddata backend`
-5. Run locally `python manage.py runserver 3000`
-6. Head over http://localhost:3000/
-
+1. Open terminal and clone the project <br>
+`git clone https://github.com/JP-SKE15/ProjectISP-Barcamp-management.git`
+2. Install all required software in requirements.txt <br>
+    `pip install -r requirements.txt`
+3. Install node_modules <br>
+    `npm install`
+4. Create any necessary database tables according to the database settings <br>
+    `python manage.py migrate`
+5. Load initialize database <br>
+    `python manage.py loaddata backend`
+6. Run locally <br>
+    `python manage.py runserver 3000`
+7. Head over http://localhost:3000/
 
 # Team member
 
