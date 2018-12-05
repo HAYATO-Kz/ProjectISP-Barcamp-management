@@ -74,8 +74,13 @@ class Speaker extends Component {
       name : "",
       username : "user",
       topic : "",
+<<<<<<< HEAD
       stopTime: '6:50',
       startTime: '6:20',
+=======
+      stopTime: '9:30',
+      startTime: '9:00',
+>>>>>>> master
       description : "",
       go : "Sign out",
       room : 0 ,
