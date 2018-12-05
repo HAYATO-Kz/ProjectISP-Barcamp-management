@@ -18,7 +18,6 @@ The official download site: [download](https://www.python.org/downloads/)
     <br>
 * **NodeJS** (version 10.12.0)<br>
 The official download site: [download](https://nodejs.org/en/)
-<br>
 
 # How to run
 1. Open terminal and clone the project <br>
