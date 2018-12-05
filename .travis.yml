@@ -33,10 +33,10 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
-
-  script:
   - python manage.py makemigrations
   - python manage.py migrate
-  - python3 manage.py test frontend/tests --verbosity 2
+
+  script:
+  - python manage.py test frontend/tests --verbosity 2
   - coverage run --source='.' manage.py test frontend/tests
   - coverage report
