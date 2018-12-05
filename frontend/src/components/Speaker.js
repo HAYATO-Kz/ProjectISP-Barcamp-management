@@ -75,7 +75,7 @@ class Speaker extends Component {
       username : "user",
       topic : "",
       stopTime: '6:50',
-      startTime: '6:50',
+      startTime: '7:20',
       description : "",
       room : 0 ,
       vote : 0 ,
