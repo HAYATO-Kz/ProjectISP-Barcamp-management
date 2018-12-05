@@ -22,6 +22,7 @@ class ShowTopic extends Component{
 
 
     componentDidMount(){
+        // fetch("https://barcamp-management.herokuapp.com/api/topic/")
         fetch("http://localhost:3000/api/topic/")
             .then(response => {
                 if (response.status !== 200) {
