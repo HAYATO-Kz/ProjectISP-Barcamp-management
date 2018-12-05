@@ -1,0 +1,13 @@
+2018-12-05 01:15:34 INFO loggins 127.0.0.1 sigin to home page
+2018-12-05 01:15:38 INFO get 127.0.0.1 load topics data
+2018-12-05 01:15:39 INFO get 127.0.0.1 load topics data
+2018-12-05 01:15:40 INFO get 127.0.0.1 load topics data
+2018-12-05 01:15:57 INFO get 127.0.0.1 load topics data
+2018-12-05 01:15:57 INFO get 127.0.0.1 load user data
+2018-12-05 01:15:57 INFO loggins 127.0.0.1 sigin to attendee page
+2018-12-05 01:15:58 INFO get 127.0.0.1 load user data
+2018-12-05 01:15:58 INFO get 127.0.0.1 load topics data
+2018-12-05 01:16:05 INFO get 127.0.0.1 load topics data
+2018-12-05 01:16:11 INFO post 127.0.0.1 post toppic
+2018-12-05 01:16:11 INFO loggins 127.0.0.1 sigin to speaker page
+2018-12-05 01:16:11 INFO get 127.0.0.1 load topics data

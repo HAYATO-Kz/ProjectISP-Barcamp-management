@@ -56,6 +56,7 @@ class Attendee extends Component {
       stopTime: '6:50 pm',
       name : "Speaker",
       username : "user",
+      go : "Sign out",
       allVote : "",
       userID : 0,
       room : 0,
@@ -157,9 +158,11 @@ class Attendee extends Component {
             allVote :  cur_user.topic_voted,
           })
         }
+        this.setState({go:"Sign out"})
       } else {
         // Signed out
         this.setState({username:"no user"})
+        this.setState({go:"Sign in"})
       }
     }.bind(this))
   }
@@ -170,7 +173,6 @@ class Attendee extends Component {
   }
 
   update(topic,index){
-
     var to = topic.topic_name
     var de = topic.description
     var st = topic.start_time
@@ -239,7 +241,7 @@ class Attendee extends Component {
                       </ModalBody>
                     </Modal>
                   <DropdownItem divider />
-                  <DropdownItem id ="out" style={{color: 'red'}} onClick={this.logout}>Sign out</DropdownItem>
+                  <DropdownItem id ="out" style={{color: 'red'}} onClick={this.logout}>{this.state.go}</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               </Nav>
