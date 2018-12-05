@@ -1,7 +1,7 @@
 from django.db import models
 
 class Topics(models.Model):
-    topic_name = models.CharField(max_length=100)
+    topic_name = models.CharField(max_length=100,unique=True)
     description = models.CharField(max_length=200)
     start_time = models.CharField(max_length=40)
     end_time = models.CharField(max_length=40)
