@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import AdminSite
 from django.utils.translation import ugettext_lazy
-from .models import Topics
+from .models import Topics, User
 
 def manageRoom1(modeladmin, request, queryset):
     for topic in queryset:
@@ -37,4 +37,4 @@ class TopicAdmin(admin.ModelAdmin):
         return queryset
 
 
-admin.site.register(Topics,TopicAdmin)
+admin.site.register(Topics,TopicAdmin,User)
