@@ -36,7 +36,7 @@ before_script:
   - python manage.py makemigrations
   - python manage.py migrate
 
-  script:
+ script:
   - python manage.py test frontend/tests --verbosity 2
   - coverage run --source='.' manage.py test frontend/tests
   - coverage report
