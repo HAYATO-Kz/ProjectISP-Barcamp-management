@@ -23,7 +23,7 @@ before_install:
  - sudo apt-get install chromium-chromedriver
 
 install:
-  - pip3 install -r requirements.txt
+  - pip install -r requirements.txt
 
 env: 
   - TRAVIS_SECURE_ENV_VARS=true
@@ -33,13 +33,13 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
-
-script:
   - python manage.py makemigrations
   - python manage.py migrate
+
+script:
   - python manage.py test backend --verbosity 2
   - coverage run --source='.' manage.py test backend
   - coverage report
-  - python3 manage.py test frontend/tests --verbosity 2
+  - python manage.py test frontend/tests --verbosity 2
   - coverage run --source='.' manage.py test frontend/tests
   - coverage report
