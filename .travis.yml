@@ -35,6 +35,7 @@ before_script:
   - sleep 3
   - python manage.py makemigrations
   - python manage.py migrate
+  - python manage.py runserver 3000
 
 script:
   - python manage.py test backend --verbosity 2
