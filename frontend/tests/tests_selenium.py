@@ -21,10 +21,9 @@ useA = deployA
 
 class UntitledTestCase(unittest.TestCase):
     def setUp(self):
-        # options = Options()
-        # options.add_argument("--headless")
-        # self.driver = webdriver.Chrome(chrome_options=options)
-        self.driver = webdriver.Chrome('chromedriver')
+        options = Options()
+        options.add_argument("--headless")
+        self.driver = webdriver.Chrome(chrome_options=options)
         self.driver.implicitly_wait(30)
 
     def test_add_new_topic(self):
