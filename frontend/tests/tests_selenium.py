@@ -10,8 +10,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 
-topic = "pppp"
-speaker = "llll"
+topic = "Topic Ja"
+speaker = "speaker Ja"
 localS = "localhost:3000/speaker"
 localA = "localhost:3000/attendee"
 deployS = "https://barcamp-management.herokuapp.com/speaker"
