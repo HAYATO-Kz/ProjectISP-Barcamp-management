@@ -183,7 +183,6 @@ class Attendee extends Component {
     var user = this.state.username
     var tvote = this.state.allVote +"'" + index.toString()
     var idtop = index+1
-
     if(!this.state.allVote.includes(idtop)){
     
     const sendData = { 'topic_name':to, 'description': de, 'start_time': st, 'end_time': et,
