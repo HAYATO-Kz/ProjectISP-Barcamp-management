@@ -30,9 +30,31 @@ The official download site: [download](https://nodejs.org/en/)
     `python manage.py migrate`
 5. Load initialize database <br>
     `python manage.py loaddata backend`
-6. Run locally <br>
+6. Create admin's user <br>
+    `python manage.py createsuperuser`
+7. Input admin id, email, and password
+8. Run locally <br>
     `python manage.py runserver 3000`
-7. Head over http://localhost:3000/
+9. Head over http://localhost:3000/
+
+# How organizer can select room for each topic
+
+### Deployed App
+  1. go to https://barcamp-management.herokuapp.com/admin/
+  2. input id : , password :
+
+### Run locally
+   1. go to http://localhost:3000/admin/
+   2. input admin's id and password that create by <br>
+    `python manage.py createsuperuser`
+
+then follow the example
+
+![click](/IterationPlan-and-Design/Django-admin/click.png)
+  
+![topic](/IterationPlan-and-Design/Django-admin/topic.png)
+  
+![room](/IterationPlan-and-Design/Django-admin/room.png)
 
 # Team member
 
