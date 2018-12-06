@@ -50,7 +50,7 @@ The official download site: [download](https://nodejs.org/en/)
 
 then follow the example
 
-![click](/IterationPlan-and-Design/Django-admin/click.png)
+![click](/IterationPlan-and-Design/Django-admin/Click.png)
   
 ![topic](/IterationPlan-and-Design/Django-admin/topic.png)
   
