@@ -41,7 +41,7 @@ The official download site: [download](https://nodejs.org/en/)
 
 ### Deployed App
   1. go to https://barcamp-management.herokuapp.com/admin/
-  2. input id : , password :
+  2. input id : admin_barcamp , password : barcamp123
 
 ### Run locally
    1. go to http://localhost:3000/admin/
